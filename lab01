@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<script>
+var lab =document.getElementById('lab');
+var arr = new Array(3);
+window.onload =function(){
+  lab.textContent="";
+  create_chars();
+}
+
+window.addEventListener("keyup", function(e){
+  console.log(e.key);
+  if(e.key==lab.textContent[0]){
+    lab.textContent=lab.textContent.replace(/^./,"")
+  }
+  create_chars();
+});
+function create_chars(){
+  for(var i=0;i<Math.random()*3;i++){
+    var new_chars =(Math.floor(Math.random()*26));
+    lab.textContent+=String.fromCharCode(new_chars+97);
+  }
+};
+</script>
+
+<body>
+<div id="lab" tabindex="0">
+  </div>
+</body>
