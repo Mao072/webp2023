@@ -12,7 +12,9 @@ window.addEventListener("keyup", function(e){
   if(e.key==lab.textContent[0]){
     lab.textContent=lab.textContent.replace(/^./,"")
   }
+  else{
   create_chars();
+  };
 });
 function create_chars(){
   for(var i=0;i<Math.random()*3;i++){
