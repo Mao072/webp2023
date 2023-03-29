@@ -1,0 +1,53 @@
+<style> 
+table { 
+  font-family: Arial, Helvetica, sans-serif; 
+  border-collapse: collapse; 
+  width: 100%; 
+} 
+td, th { 
+  border: 1px solid #ddd; 
+  padding: 6px; 
+} 
+tr:nth-child(even){background-color: #f2f2f2;} 
+tr:hover {background-color: #ddd;} 
+th { 
+  padding-top: 12px; 
+  padding-bottom: 12px; 
+  text-align: left; 
+  background-color: #04AA6D; 
+  color: white; 
+} 
+</style>
+<script>
+  var a=["資工系","資工系","資工系","資工系","資工系","資工系"];
+var b=["物件導向軟體程式","計算機網路實驗","作業系統實務","生物統計","通訊系統","軟硬體專題(2)"];
+var c=["黃崇源","李春良","張哲維","陳光武","陳仁暉","魏志達"];
+
+function addNewData(){
+  var myTable=document.getElementById("csie");
+  var count =a.length;
+  for(var i=0;i<count;i++){
+    var row=myTable.insertRow(-1);
+    row.insertCell(0).innerHTML=a[i];
+    row.insertCell(1).innerHTML=b[i];
+    row.insertCell(2).innerHTML=c[i];
+  }
+}
+function delData(){
+  var mytable=document.getElementById("csie");
+  var count= document.getElementById("csie").rows.length;
+    if(count!=1){
+      mytable.deleteRow(-1);
+    }
+}
+</script>
+<h1>資工選課表</h1>
+<table id="csie">
+  <tr>
+    <th>開課單位</th>
+    <th>課程名稱</th>
+    <th>授課講師</th>
+   </tr>
+</table>
+<button onclick="addNewData()">addNewData</button>
+<button onclick="delData()">delOldData</button>
